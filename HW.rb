@@ -41,7 +41,7 @@ class Elevator
   end
 
   def up 
-    @floor += @change unless @floor == 20
+    @floor += change unless @floor == 20
     puts("Welcome to floor #{@floor}!")
     if @floor == 20
       puts("This is the top floor, you can go no higher.")
@@ -53,7 +53,7 @@ class Elevator
 
 
   def down
-    @floor -= @change unless @floor == -1
+    @floor -= change unless @floor == -1
     puts("Welcome to floor #{@floor}!")
     if @floor == -1
       puts("This is the basement! Bottom Floor!")
