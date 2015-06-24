@@ -1,8 +1,11 @@
 class Calculator
-  def initialize(value1=0,value2=0)
+  def initialize(value1,value2)
     @value1 = value1
     @value2 = value2
   end
+  attr_accessor :value1
+  attr_accessor :value2
+
   def self.values
     new(12,4)
   end
@@ -20,29 +23,38 @@ class Calculator
   end
 
   def divide
-    puts(@value1 / @value2)
+    puts(@value1.to_f / @value2.to_f)
   end
 
 end
 
 class Elevator 
-  def initialize(floor=0,num)
+  def initialize(floor,change)
     @floor = floor
-    @num = num
+    @change = change
   end
 
+  attr_accessor :change
+
   def self.elev 
-    new(0,3)
+    new(0,1)
   end
 
   def up 
-    @floor += @num 
+    @floor += @change unless @floor == 20
     puts("Welcome to floor #{@floor}!")
+    if @floor == 20
+      puts("This is the top floor, you can go no higher.")
+    end
   end
 
+
   def down
-    @floor -= @num unless @floor == 0
+    @floor -= @change unless @floor == -1
     puts("Welcome to floor #{@floor}!")
+    if @floor == -1
+      puts("This is the basement! Bottom Floor!")
+    end
   end
 
 end
