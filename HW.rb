@@ -45,8 +45,11 @@ class Elevator
     puts("Welcome to floor #{@floor}!")
     if @floor == 20
       puts("This is the top floor, you can go no higher.")
+    elsif @floor == 13
+      puts("don't get off here")
     end
   end
+
 
 
   def down
